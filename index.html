@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Plant & Gardening Shop</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+
+        /* =========================================
+           GENERAL
+        ========================================= */
+
+        body {
+            background-color: #f7faf5;
+            color: #344236;
+        }
+
+
+        /* =========================================
+           RESPONSIVE TYPOGRAPHY
+           Menggunakan clamp() sesuai requirement
+        ========================================= */
+
+        h1 {
+            font-size: clamp(2rem, 6vw, 4rem);
+        }
+
+        h2 {
+            font-size: clamp(1.6rem, 4vw, 2.5rem);
+        }
+
+        .hero-text {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+        }
+
+        .product-title {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+        }
+
+        .product-price {
+            font-size: clamp(1rem, 2vw, 1.15rem);
+        }
+
+
+        /* =========================================
+           NAVBAR
+        ========================================= */
+
+        .navbar {
+            background-color: #527a55 !important;
+        }
+
+        .navbar-brand {
+            color: white !important;
+            font-size: 1.25rem;
+        }
+
+        .navbar .nav-link {
+            color: white !important;
+        }
+
+        .navbar .nav-link:hover {
+            color: #dcefd9 !important;
+        }
+
+        .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .navbar-toggler-icon {
+            filter: brightness(0) invert(1);
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .hero {
+            background-color: #e5f0e1;
+        }
+
+        .hero-icon {
+            font-size: clamp(3rem, 8vw, 5rem);
+            color: #527a55;
+        }
+
+        .hero h1 {
+            color: #3f6543;
+        }
+
+
+        /* =========================================
+           PRODUCT CARD
+        ========================================= */
+
+        .product-card {
+            border: none;
+            border-radius: 18px;
+            overflow: hidden;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, 0.12) !important;
+        }
+
+
+        /* Responsive image */
+
+        .product-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+
+        /* Product price */
+
+        .product-price {
+            color: #527a55;
+        }
+
+
+        /* Button */
+
+        .btn-plant {
+            background-color: #527a55;
+            color: white;
+            border: none;
+        }
+
+        .btn-plant:hover {
+            background-color: #3f6543;
+            color: white;
+        }
+
+
+        /* =========================================
+           ABOUT
+        ========================================= */
+
+        .about-section {
+            background-color: #eaf2e7;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+            background-color: #3f6543;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         NAVBAR
+    ========================================= -->
+
+    <header>
+
+        <nav class="navbar navbar-expand-lg">
+
+            <div class="container">
+
+                <!-- Brand -->
+
+                <a class="navbar-brand fw-bold" href="#">
+
+                    <i class="bi bi-flower1"></i>
+
+                    Plant For You Shop
+
+                </a>
+
+
+                <!-- Hamburger -->
+
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarMenu"
+                    aria-controls="navbarMenu"
+                    aria-expanded="false"
+                    aria-label="Buka menu navigasi">
+
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+
+
+                <!-- Navigation Menu -->
+
+                <div
+                    class="collapse navbar-collapse"
+                    id="navbarMenu">
+
+                    <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+
+                            <a
+                                class="nav-link active"
+                                href="#">
+
+                                Home
+
+                            </a>
+
+                        </li>
+
+
+                        <li class="nav-item">
+
+                            <a
+                                class="nav-link"
+                                href="#produk">
+
+                                Produk
+
+                            </a>
+
+                        </li>
+
+
+                        <li class="nav-item">
+
+                            <a
+                                class="nav-link"
+                                href="#tentang">
+
+                                Tentang
+
+                            </a>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN
+    ========================================= -->
+
+    <main>
+
+
+        <!-- =====================================
+             HERO SECTION
+        ====================================== -->
+
+        <section class="hero py-5">
+
+            <div class="container text-center">
+
+                <div class="hero-icon mb-3">
+
+                    <i class="bi bi-flower1"></i>
+
+                </div>
+
+
+                <h1 class="fw-bold">
+
+                    Plant For You Shop
+
+                </h1>
+
+
+                <p class="hero-text mb-4">
+
+                    Temukan tanaman kamu untuk membuat rumahmu menjadi lebih hijau dan segar
+
+                </p>
+
+
+                <a
+                    href="#produk"
+                    class="btn btn-plant px-4 py-2">
+
+                    Lihat Produk
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             PRODUCT SECTION
+        ====================================== -->
+
+        <section
+            id="produk"
+            class="py-5">
+
+            <div class="container">
+
+
+                <!-- Section Heading -->
+
+                <div class="text-center mb-5">
+
+                    <h2 class="fw-bold">
+
+                        Produk Pilihan
+
+                    </h2>
+
+
+                    <p class="text-muted">
+
+                        Temukan Berbagai Tanaman Hias Di sini 
+
+                    </p>
+
+                </div>
+
+
+
+                <!--
+                    RESPONSIVE GRID
+
+                    Mobile  : 1 kolom
+                    Tablet  : 2 kolom
+                    Laptop  : 3 kolom
+                    Desktop : 4 kolom
+
+                    Bootstrap breakpoints:
+                    col-12       = mobile
+                    col-md-6     = ≥768px
+                    col-lg-4     = ≥992px
+                    col-xl-3     = ≥1200px
+                -->
+
+
+                <div class="row g-4">
+
+
+                    <!-- =================================
+                         PRODUCT 1
+                    ================================== -->
+
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+
+                        <article class="card product-card h-100 shadow-sm">
+
+
+                            <img
+                                src="Images/Monstera-Deliciosa.jpg"
+                                class="card-img-top product-image"
+                                alt="Tanaman monstera dalam pot">
+
+
+                            <div class="card-body d-flex flex-column">
+
+                                <h3 class="product-title fw-bold">
+
+                                    Monstera Deliciosa
+
+                                </h3>
+
+
+                                <p class="text-muted">
+
+                                    Tanaman hias dengan daun lebar dan unik yang cocok untuk mempercantik ruanganmu
+
+                                </p>
+
+
+                                <p class="product-price fw-bold mt-auto">
+
+                                    Rp85.000
+
+                                </p>
+
+
+                                <button class="btn btn-plant w-100">
+
+                                    <i class="bi bi-cart-plus"></i>
+
+                                    Beli Sekarang
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         PRODUCT 2
+                    ================================== -->
+
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+
+                        <article class="card product-card h-100 shadow-sm">
+
+
+                            <img
+                                src="Images/Calathea Orbifolia.jpg"
+                                class="card-img-top product-image"
+                                alt="Tanaman calathea dalam pot">
+
+
+                            <div class="card-body d-flex flex-column">
+
+                                <h3 class="product-title fw-bold">
+
+                                    Calathea Orbifolia
+
+                                </h3>
+
+
+                                <p class="text-muted">
+
+                                    Tanaman dengan daun besar bergaris cantik yang memberikan kesan segar dan elegan
+                                </p>
+
+
+                                <p class="product-price fw-bold mt-auto">
+
+                                    Rp75.000
+
+                                </p>
+
+
+                                <button class="btn btn-plant w-100">
+
+                                    <i class="bi bi-cart-plus"></i>
+
+                                    Beli Sekarang
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         PRODUCT 3
+                    ================================== -->
+
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+
+                        <article class="card product-card h-100 shadow-sm">
+
+
+                            <img
+                                src="Images/Mini Cactus.jpg"
+                                class="card-img-top product-image"
+                                alt="Tanaman cactus dalam pot">
+
+
+                            <div class="card-body d-flex flex-column">
+
+                                <h3 class="product-title fw-bold">
+
+                                    Mini Cactus
+
+                                </h3>
+
+
+                                <p class="text-muted">
+
+                                    Kaktus mungil yang praktis dan cocok untuk menghiasi meja belajar atau ruang kerja
+
+                                </p>
+
+
+                                <p class="product-price fw-bold mt-auto">
+
+                                    Rp30.000
+
+                                </p>
+
+
+                                <button class="btn btn-plant w-100">
+
+                                    <i class="bi bi-cart-plus"></i>
+
+                                    Beli Sekarang
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         PRODUCT 4
+                    ================================== -->
+
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+
+                        <article class="card product-card h-100 shadow-sm">
+
+
+                            <img
+                                src="Images/Snake Plant.jpg"
+                                class="card-img-top product-image"
+                                alt="Tanaman snake plant dalam pot">
+
+
+                            <div class="card-body d-flex flex-column">
+
+                                <h3 class="product-title fw-bold">
+
+                                    Snake Plant
+
+                                </h3>
+
+
+                                <p class="text-muted">
+
+                                    Tanaman dengan daun tegak yang cocok sebagai dekorasi untuk berbagai ruangan
+                                </p>
+
+
+                                <p class="product-price fw-bold mt-auto">
+
+                                    Rp65.000
+
+                                </p>
+
+
+                                <button class="btn btn-plant w-100">
+
+                                    <i class="bi bi-cart-plus"></i>
+
+                                    Beli Sekarang
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         PRODUCT 5
+                    ================================== -->
+
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+
+                        <article class="card product-card h-100 shadow-sm">
+
+
+                            <img
+                                src="Images/Philodendron.jpg"
+                                class="card-img-top product-image"
+                                alt="Tanaman Philodendron dalam pot">
+
+
+                            <div class="card-body d-flex flex-column">
+
+                                <h3 class="product-title fw-bold">
+
+                                    Philodendron
+
+                                </h3>
+
+
+                                <p class="text-muted">
+
+                                    Tanaman berdaun hijau yang memberikan suasana alami dan nyaman di dalam rumah
+
+                                </p>
+
+
+                                <p class="product-price fw-bold mt-auto">
+
+                                    Rp70.000
+
+                                </p>
+
+
+                                <button class="btn btn-plant w-100">
+
+                                    <i class="bi bi-cart-plus"></i>
+
+                                    Beli Sekarang
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         PRODUCT 6
+                    ================================== -->
+
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+
+                        <article class="card product-card h-100 shadow-sm">
+
+
+                            <img
+                                src="Images/Peace Lily.jpg"
+                                class="card-img-top product-image"
+                                alt="Tanaman Peace Lily dalam pot">
+
+
+
+                            <div class="card-body d-flex flex-column">
+
+                                <h3 class="product-title fw-bold">
+
+                                    Peace Lily
+
+                                </h3>
+
+
+                                <p class="text-muted">
+
+                                    Tanaman hias dengan bunga putih yang memberikan kesan bersih, cantik, dan menyegarkan
+
+                                </p>
+
+
+                                <p class="product-price fw-bold mt-auto">
+
+                                    Rp60.000
+
+                                </p>
+
+
+                                <button class="btn btn-plant w-100">
+
+                                    <i class="bi bi-cart-plus"></i>
+
+                                    Beli Sekarang
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                                        <!-- =================================
+                         PRODUCT 7
+                    ================================== -->
+
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+
+                        <article class="card product-card h-100 shadow-sm">
+
+                            <img
+                                src="Images/Aglonema Red.jpg"
+                                class="card-img-top product-image"
+                                alt="Tanaman Aglonema Red dalam pot">
+
+                            <div class="card-body d-flex flex-column">
+
+                                <h3 class="product-title fw-bold">
+
+                                    Aglonema Red
+
+                                </h3>
+
+                                <p class="text-muted">
+
+                                    Tanaman hias dengan perpaduan warna merah dan hijau yang menarik untuk mempercantik ruangan
+
+                                </p>
+
+                                <p class="product-price fw-bold mt-auto">
+
+                                    Rp80.000
+
+                                </p>
+
+                                <button class="btn btn-plant w-100">
+
+                                    <i class="bi bi-cart-plus"></i>
+
+                                    Beli Sekarang
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+
+                    <!-- =================================
+                         PRODUCT 8
+                    ================================== -->
+
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+
+                        <article class="card product-card h-100 shadow-sm">
+
+                            <img
+                                src="Images/Anthurium.jpg"
+                                class="card-img-top product-image"
+                                alt="Tanaman Anthurium dalam pot">
+
+                            <div class="card-body d-flex flex-column">
+
+                                <h3 class="product-title fw-bold">
+
+                                    Anthurium
+
+                                </h3>
+
+                                <p class="text-muted">
+
+                                    Tanaman hias dengan daun hijau mengilap yang memberikan kesan elegan dan segar
+
+                                </p>
+
+                                <p class="product-price fw-bold mt-auto">
+
+                                    Rp90.000
+
+                                </p>
+
+                                <button class="btn btn-plant w-100">
+
+                                    <i class="bi bi-cart-plus"></i>
+
+                                    Beli Sekarang
+
+                                </button>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================
+             ABOUT SECTION
+        ====================================== -->
+
+        <section
+            id="tentang"
+            class="about-section py-5">
+
+            <div class="container text-center">
+
+                <h2 class="fw-bold mb-3">
+
+                    Tentang Plant For You Shop
+
+                </h2>
+
+
+                <p class="mb-0">
+
+                    Plant For You Shop menyediakan berbagai jenis
+                    tanaman untuk membantu menciptakan lingkungan rumah yang lebih hijau,
+                    segar, dan nyaman.
+
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
+
+    <footer class="text-white text-center py-4">
+
+        <div class="container">
+
+            <p class="mb-1">
+
+                <i class="bi bi-flower1"></i>
+
+                Plant For You Shop
+
+            </p>
+
+
+            <small>
+
+                &copy; 2026 Plant For You Shop.
+                All Rights Reserved.
+
+            </small>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         BOOTSTRAP JAVASCRIPT
+    ========================================= -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+</body>
+
+</html>
